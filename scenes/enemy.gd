@@ -1,7 +1,7 @@
 extends RigidBody2D
 
-@onready var game_manager: Node = $"../GameManager"
-@onready var main_character: CharacterBody2D = $"../CharacterBody2D"
+@onready var game_manager: Node = $"../../GameManager"
+@onready var main_character: CharacterBody2D = $"../../CharacterBody2D"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
