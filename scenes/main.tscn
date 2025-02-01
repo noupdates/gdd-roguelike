@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cd25if5vm6lxd"]
+[gd_scene load_steps=10 format=4 uid="uid://cd25if5vm6lxd"]
 
 [ext_resource type="Texture2D" uid="uid://c8ghkmenjb8bq" path="res://Brown.png" id="1_mibic"]
 [ext_resource type="Texture2D" uid="uid://ckmlcej4xqq0h" path="res://Tilemap_Flat.png" id="2_xyoef"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b01kpiacb7263" path="res://scenes/enemy.tscn" id="4_ba2pm"]
 [ext_resource type="Texture2D" uid="uid://o3y2ore7ahhs" path="res://love-always-wins.png" id="5_iop0l"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="6_47df3"]
+[ext_resource type="PackedScene" uid="uid://dsrxjilbjiw37" path="res://scenes/arrow.tscn" id="7_4leua"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3a47"]
 texture = ExtResource("2_xyoef")
@@ -649,6 +650,10 @@ sources/0 = SubResource("TileSetAtlasSource_x3a47")
 
 [node name="Node" type="Node"]
 
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+script = ExtResource("6_47df3")
+hearts = [NodePath("../UI/Panel/HBoxContainer/Heart"), NodePath("../UI/Panel/HBoxContainer/Heart2"), NodePath("../UI/Panel/HBoxContainer/Heart3")]
+
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
 anchors_preset = 15
@@ -666,10 +671,14 @@ tile_set = SubResource("TileSet_valmd")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_rf261")]
 position = Vector2(129, 125)
+arrow_scene = ExtResource("7_4leua")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Enemy" parent="." instance=ExtResource("4_ba2pm")]
+position = Vector2(429, 238)
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -679,7 +688,7 @@ offset_right = -34.0
 offset_bottom = 100.0
 grow_horizontal = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -688,27 +697,20 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Heart" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="Heart" type="TextureRect" parent="UI/Panel/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("5_iop0l")
 expand_mode = 2
 
-[node name="Heart2" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="Heart2" type="TextureRect" parent="UI/Panel/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("5_iop0l")
 expand_mode = 2
 
-[node name="Heart3" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="Heart3" type="TextureRect" parent="UI/Panel/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("5_iop0l")
 expand_mode = 2
-
-[node name="RigidBody2D" parent="." instance=ExtResource("4_ba2pm")]
-position = Vector2(429, 238)
-
-[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
-script = ExtResource("6_47df3")
-hearts = [NodePath("../CanvasLayer/Panel/HBoxContainer/Heart"), NodePath("../CanvasLayer/Panel/HBoxContainer/Heart2"), NodePath("../CanvasLayer/Panel/HBoxContainer/Heart3")]

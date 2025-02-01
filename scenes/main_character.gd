@@ -4,6 +4,8 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
+@export var arrow_scene: PackedScene
+
 func get_pushed_back(x,y):
 	var push_distance = 80
 	if (x > 40): position.x += push_distance
@@ -12,9 +14,8 @@ func get_pushed_back(x,y):
 	if (y < -50): position.y += push_distance
 	
 func _physics_process(delta: float) -> void:
-
 	# Animations	
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("shoot"):
 		sprite_2d.animation = "shooting"
 	elif (velocity.x > 1 || velocity.x < -1 || velocity.y > 1 || velocity.y < -1):
 		sprite_2d.animation = "moving"
@@ -23,8 +24,8 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction_x := Input.get_axis("ui_left", "ui_right")
-	var direction_y := Input.get_axis("ui_up", "ui_down")
+	var direction_x := Input.get_axis("left", "right")
+	var direction_y := Input.get_axis("up", "down")
 	
 	# Create a direction vector
 	var direction := Vector2(direction_x, direction_y)
@@ -39,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if direction_x < 0:
-		sprite_2d.flip_h = true  # Face left
+		sprite_2d.flip_v = true  # Face left
 	elif direction_x > 0:
-		sprite_2d.flip_h = false  # Face right
+		sprite_2d.flip_v = false  # Face right
+		

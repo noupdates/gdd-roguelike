@@ -176,9 +176,8 @@ script = ExtResource("1_gv1pi")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jsieu")
-animation = &"shooting"
+animation = &"moving"
 autoplay = "default"
-frame_progress = 0.168921
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 5)
