@@ -1,7 +1,13 @@
 extends RigidBody2D
 
 @onready var game_manager: Node = $"../GameManager"
+@onready var main_character: CharacterBody2D = $"../CharacterBody2D"
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+
+var hit_count: int = 0  # Counter to track the number of hits
+const MAX_HITS = 10  # Number of hits required to remove the enemy
+const MOVE_SPEED = 100.0  # Speed at which the enemy moves
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,7 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	move_toward_main_character(delta)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -21,4 +27,22 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		print("lose health")
 		body.get_pushed_back(x_delta, y_delta)
 		game_manager.decrease_health()
+	elif body.name == "Arrow":  # Check for collision with arrow
+		hit_count += 1
+		print("hit count: " + str(hit_count))
+		if hit_count >= MAX_HITS:
+			queue_free()
+		
+func move_toward_main_character(delta: float) -> void:
+	if main_character:
+		var direction = (main_character.position - position).normalized()
+		position += direction * MOVE_SPEED * delta
+		
+		# Flip the enemy's sprite based on the direction it's moving
+		if direction.x < 0:
+			animated_sprite_2d.flip_h = true  # Face left
+			animated_sprite_2d.animation = "moving"
+		elif direction.x > 0:
+			animated_sprite_2d.flip_h = false  # Face right
+			animated_sprite_2d.animation = "moving"
 		
