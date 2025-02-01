@@ -17,6 +17,7 @@ func _physics_process(delta: float) -> void:
 	# Animations	
 	if Input.is_action_pressed("shoot"):
 		sprite_2d.animation = "shooting"
+		shoot_arrow()
 	elif (velocity.x > 1 || velocity.x < -1 || velocity.y > 1 || velocity.y < -1):
 		sprite_2d.animation = "moving"
 	else:
@@ -40,7 +41,20 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if direction_x < 0:
-		sprite_2d.flip_v = true  # Face left
+		sprite_2d.flip_h = true  # Face left
 	elif direction_x > 0:
-		sprite_2d.flip_v = false  # Face right
-		
+		sprite_2d.flip_h = false  # Face right
+	
+func shoot_arrow() -> void:
+	var arrow_instance = arrow_scene.instantiate()
+	arrow_instance.position = position + Vector2(-70 if sprite_2d.flip_h else 70, 0) # Set the initial position of the arrow to the character's position
+	
+	# Set the direction and velocity of the arrow
+	if sprite_2d.flip_h:
+		arrow_instance.linear_velocity  = Vector2(-2000, 0)  # Adjust the velocity value as needed
+		arrow_instance.get_node("Sprite2D").flip_h = true
+	else:
+		arrow_instance.linear_velocity  = Vector2(2000, 0)  # Adjust the velocity value as needed
+		arrow_instance.get_node("Sprite2D").flip_h = false
+
+	get_parent().add_child(arrow_instance)
