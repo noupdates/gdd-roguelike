@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b01kpiacb7263"]
+[gd_scene load_steps=13 format=3 uid="uid://b01kpiacb7263"]
 
 [ext_resource type="Texture2D" uid="uid://cgtikq5sftybb" path="res://Torch_Red.png" id="1_3yyfu"]
+[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_lvfdv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ptnj"]
 atlas = ExtResource("1_3yyfu")
@@ -62,15 +63,27 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkvcc"]
 size = Vector2(44, 56)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wol00"]
+size = Vector2(58, 67)
+
 [node name="RigidBody2D" type="RigidBody2D"]
 gravity_scale = 0.0
+script = ExtResource("1_lvfdv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -3)
 sprite_frames = SubResource("SpriteFrames_0lnpd")
 autoplay = "default"
-frame_progress = 0.990362
+frame_progress = 0.3647
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_nkvcc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 1.5)
+shape = SubResource("RectangleShape2D_wol00")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

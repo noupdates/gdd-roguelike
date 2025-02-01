@@ -4,6 +4,13 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
+func get_pushed_back(x,y):
+	var push_distance = 80
+	if (x > 40): position.x += push_distance
+	if (x < -35): position.x -= push_distance
+	if (y > 50): position.y -= push_distance
+	if (y < -50): position.y += push_distance
+	
 func _physics_process(delta: float) -> void:
 
 	# Animations	

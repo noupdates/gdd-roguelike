@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bgoy4opnt0lp3" path="res://scenes/main_character.tscn" id="3_rf261"]
 [ext_resource type="PackedScene" uid="uid://b01kpiacb7263" path="res://scenes/enemy.tscn" id="4_ba2pm"]
 [ext_resource type="Texture2D" uid="uid://o3y2ore7ahhs" path="res://love-always-wins.png" id="5_iop0l"]
+[ext_resource type="Script" path="res://scenes/game_manager.gd" id="6_47df3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3a47"]
 texture = ExtResource("2_xyoef")
@@ -646,20 +647,6 @@ texture = ExtResource("2_xyoef")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_x3a47")
 
-[sub_resource type="GDScript" id="GDScript_1arm7"]
-script/source = "extends RigidBody2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
 [node name="Node" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -679,10 +666,6 @@ tile_set = SubResource("TileSet_valmd")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_rf261")]
 position = Vector2(129, 125)
-
-[node name="RigidBody2D" parent="." instance=ExtResource("4_ba2pm")]
-position = Vector2(999, 540)
-script = SubResource("GDScript_1arm7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -705,20 +688,27 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="Heart" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("5_iop0l")
 expand_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="Heart2" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("5_iop0l")
 expand_mode = 2
 
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="Heart3" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("5_iop0l")
 expand_mode = 2
+
+[node name="RigidBody2D" parent="." instance=ExtResource("4_ba2pm")]
+position = Vector2(429, 238)
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
+script = ExtResource("6_47df3")
+hearts = [NodePath("../CanvasLayer/Panel/HBoxContainer/Heart"), NodePath("../CanvasLayer/Panel/HBoxContainer/Heart2"), NodePath("../CanvasLayer/Panel/HBoxContainer/Heart3")]
