@@ -31,6 +31,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		hit_count += 1
 		print("hit count: " + str(hit_count))
 		if hit_count >= MAX_HITS:
+			get_node("/root/AudioManager").play_dead_goblin_sfx()
 			queue_free()
 		
 func move_toward_main_character(delta: float) -> void:

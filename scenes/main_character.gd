@@ -51,7 +51,7 @@ func shoot_arrow() -> void:
 	var arrow_instance = arrow_scene.instantiate()
 	arrow_instance.position = position + Vector2(-70 if sprite_2d.flip_h else 70, 0) # Set the initial position of the arrow to the character's position
 	
-	get_node("/root/AudioManager").play_arrow_sound()
+	get_node("/root/AudioManager").play_arrow_sfx()
 	
 	# Set the direction and velocity of the arrow
 	if sprite_2d.flip_h:
