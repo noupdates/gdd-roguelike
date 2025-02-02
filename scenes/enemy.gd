@@ -37,12 +37,21 @@ func move_toward_main_character(delta: float) -> void:
 	if main_character:
 		var direction = (main_character.position - position).normalized()
 		position += direction * MOVE_SPEED * delta
+				
+		var distance = main_character.position.distance_to(position)
 		
 		# Flip the enemy's sprite based on the direction it's moving
 		if direction.x < 0:
 			animated_sprite_2d.flip_h = true  # Face left
-			animated_sprite_2d.animation = "moving"
+			attack_animation(distance)
 		elif direction.x > 0:
 			animated_sprite_2d.flip_h = false  # Face right
-			animated_sprite_2d.animation = "moving"
+			attack_animation(distance)
 		
+
+func attack_animation(distance):
+	if distance < 140:
+		animated_sprite_2d.animation = "attacking"
+	else:
+		animated_sprite_2d.animation = "moving"
+	
