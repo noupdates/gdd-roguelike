@@ -1,7 +1,8 @@
 extends Node
 @onready var arrows_sfx: AudioStreamPlayer = $sfx_arrows
 @onready var background_music = AudioStreamPlayer
-@onready var dead_goblin_sfx = AudioStreamPlayer
+@onready var dead_goblin_scream_sfx = AudioStreamPlayer
+@onready var blood_explosion_sfx = AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -14,17 +15,23 @@ func _ready() -> void:
 	add_child(arrows_sfx)
 	arrows_sfx.stream = preload("res://sound/sfx/arrows.mp3")
 	
-	dead_goblin_sfx = AudioStreamPlayer.new()
-	add_child(dead_goblin_sfx)
-	dead_goblin_sfx.stream = preload("res://sound/sfx/blood_explosion_sfx.mp3")
+	blood_explosion_sfx = AudioStreamPlayer.new()
+	add_child(blood_explosion_sfx)
+	blood_explosion_sfx.stream = preload("res://sound/sfx/blood_explosion_sfx.mp3")
+	
+	dead_goblin_scream_sfx = AudioStreamPlayer.new()
+	add_child(dead_goblin_scream_sfx)
+	dead_goblin_scream_sfx.stream = preload("res://sound/sfx/dead_goblin_scream_sfx.mp3")
 	
 func play_arrow_sfx():
 	if arrows_sfx.stream:
 		arrows_sfx.play()
 		
 func play_dead_goblin_sfx():
-	if dead_goblin_sfx.stream:
-		dead_goblin_sfx.play()
+	if dead_goblin_scream_sfx.stream:
+		dead_goblin_scream_sfx.play()
+	if blood_explosion_sfx.stream:
+		blood_explosion_sfx.play()
 		
 func set_volume(volume_db: float):
 	background_music.volume_db = volume_db

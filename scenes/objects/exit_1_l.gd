@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body.name == "CharacterBody2D"):
-		get_tree().change_scene_to_file("res://scenes/area_two.tscn")
+		get_tree().change_scene_to_file("res://scenes/areas/area_two.tscn")

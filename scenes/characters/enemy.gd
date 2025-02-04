@@ -57,7 +57,7 @@ func attack_animation(distance):
 		animated_sprite_2d.animation = "moving"
 		
 func blood_animation():
-	var BloodEffect  = preload("res://scenes/blood_animation.tscn")
+	var BloodEffect  = preload("res://scenes/objects/blood_animation.tscn")
 	var blood_effect = BloodEffect.instantiate()
 	get_parent().add_child(blood_effect)
 	blood_effect.position = position
