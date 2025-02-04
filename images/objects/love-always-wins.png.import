@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckmlcej4xqq0h"
-path="res://.godot/imported/Tilemap_Flat.png-a69fc51b4a5d8332f3441adc2fa5e857.ctex"
+uid="uid://o3y2ore7ahhs"
+path="res://.godot/imported/love-always-wins.png-592241c5e3b58bb4c568a170a8ea0fee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Tilemap_Flat.png"
-dest_files=["res://.godot/imported/Tilemap_Flat.png-a69fc51b4a5d8332f3441adc2fa5e857.ctex"]
+source_file="res://images/objects/love-always-wins.png"
+dest_files=["res://.godot/imported/love-always-wins.png-592241c5e3b58bb4c568a170a8ea0fee.ctex"]
 
 [params]
 

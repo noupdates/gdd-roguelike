@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://injo2depwkt2"
-path="res://.godot/imported/Arrow_single.png-1c8b70c2de8428ab09272a3e758a940a.ctex"
+uid="uid://cs1q1f7j3xr83"
+path="res://.godot/imported/Archer_Blue_solo.png-b796bdff82de8add0eaf22eeabb3cf58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Arrow_single.png"
-dest_files=["res://.godot/imported/Arrow_single.png-1c8b70c2de8428ab09272a3e758a940a.ctex"]
+source_file="res://images/characters/Archer_Blue_solo.png"
+dest_files=["res://.godot/imported/Archer_Blue_solo.png-b796bdff82de8add0eaf22eeabb3cf58.ctex"]
 
 [params]
 

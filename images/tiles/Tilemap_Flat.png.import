@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs1q1f7j3xr83"
-path="res://.godot/imported/Archer_Blue_solo.png-072003b04fcd3e2f9543ab6433096d98.ctex"
+uid="uid://ckmlcej4xqq0h"
+path="res://.godot/imported/Tilemap_Flat.png-476fcb2a789acd1a28af3899c4fe7bb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Archer_Blue_solo.png"
-dest_files=["res://.godot/imported/Archer_Blue_solo.png-072003b04fcd3e2f9543ab6433096d98.ctex"]
+source_file="res://images/tiles/Tilemap_Flat.png"
+dest_files=["res://.godot/imported/Tilemap_Flat.png-476fcb2a789acd1a28af3899c4fe7bb3.ctex"]
 
 [params]
 

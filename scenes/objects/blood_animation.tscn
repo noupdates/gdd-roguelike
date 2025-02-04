@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://dckkvmj5l0w72"]
 
-[ext_resource type="Script" path="res://scenes/blood_animation.gd" id="1_3yb5f"]
-[ext_resource type="Texture2D" uid="uid://rav2b5u6nlcx" path="res://images/blood.png" id="1_kythb"]
+[ext_resource type="Script" path="res://scenes/objects/blood_animation.gd" id="1_3yb5f"]
+[ext_resource type="Texture2D" uid="uid://rav2b5u6nlcx" path="res://images/objects/blood.png" id="1_kythb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ev6lq"]
 atlas = ExtResource("1_kythb")
