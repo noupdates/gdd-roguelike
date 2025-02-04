@@ -7,16 +7,16 @@ extends Node
 func _ready() -> void:
 	background_music = AudioStreamPlayer.new()
 	add_child(background_music)
-	background_music.stream = preload("res://funny_battle_music.mp3")  
+	background_music.stream = preload("res://sound/music/funny_battle_music.mp3")  
 	background_music.play()
 	
 	arrows_sfx = AudioStreamPlayer.new()
 	add_child(arrows_sfx)
-	arrows_sfx.stream = preload("res://arrows.mp3")
+	arrows_sfx.stream = preload("res://sound/sfx/arrows.mp3")
 	
 	dead_goblin_sfx = AudioStreamPlayer.new()
 	add_child(dead_goblin_sfx)
-	dead_goblin_sfx.stream = preload("res://blood_explosion_sfx.mp3")
+	dead_goblin_sfx.stream = preload("res://sound/sfx/blood_explosion_sfx.mp3")
 	
 func play_arrow_sfx():
 	if arrows_sfx.stream:

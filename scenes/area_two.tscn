@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=4 uid="uid://bp7gloto38wgb"]
 
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_snfop"]
-[ext_resource type="Texture2D" uid="uid://c8ghkmenjb8bq" path="res://Brown.png" id="2_ex7tk"]
-[ext_resource type="Texture2D" uid="uid://ckmlcej4xqq0h" path="res://Tilemap_Flat.png" id="3_8hdnd"]
+[ext_resource type="Texture2D" uid="uid://c8ghkmenjb8bq" path="res://images/Brown.png" id="2_ex7tk"]
+[ext_resource type="Texture2D" uid="uid://ckmlcej4xqq0h" path="res://images/Tilemap_Flat.png" id="3_8hdnd"]
 [ext_resource type="PackedScene" uid="uid://bgoy4opnt0lp3" path="res://scenes/main_character.tscn" id="4_slu53"]
 [ext_resource type="PackedScene" uid="uid://dsrxjilbjiw37" path="res://scenes/arrow.tscn" id="5_8fwtl"]
 [ext_resource type="PackedScene" uid="uid://b01kpiacb7263" path="res://scenes/enemy.tscn" id="6_aun3d"]
-[ext_resource type="Texture2D" uid="uid://o3y2ore7ahhs" path="res://love-always-wins.png" id="7_vh07b"]
+[ext_resource type="Texture2D" uid="uid://o3y2ore7ahhs" path="res://images/love-always-wins.png" id="7_vh07b"]
 [ext_resource type="PackedScene" uid="uid://bglfbs7mqerkx" path="res://scenes/exit_h.tscn" id="8_vqfcr"]
 [ext_resource type="Script" path="res://scenes/exit_2_r.gd" id="9_3bcm5"]
 

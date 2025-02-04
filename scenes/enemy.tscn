@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://b01kpiacb7263"]
 
-[ext_resource type="Texture2D" uid="uid://cgtikq5sftybb" path="res://Torch_Red.png" id="1_3yyfu"]
+[ext_resource type="Texture2D" uid="uid://cgtikq5sftybb" path="res://images/Torch_Red.png" id="1_3yyfu"]
 [ext_resource type="Script" path="res://scenes/enemy.gd" id="1_lvfdv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3k8sd"]

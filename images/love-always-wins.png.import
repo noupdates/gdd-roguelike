@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://injo2depwkt2"
-path="res://.godot/imported/Arrow_single.png-5667394a35295440f7e68b19e315788e.ctex"
+uid="uid://o3y2ore7ahhs"
+path="res://.godot/imported/love-always-wins.png-d67e8fbb020d5854ac20aaca72ce65f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arrow_single.png"
-dest_files=["res://.godot/imported/Arrow_single.png-5667394a35295440f7e68b19e315788e.ctex"]
+source_file="res://images/love-always-wins.png"
+dest_files=["res://.godot/imported/love-always-wins.png-d67e8fbb020d5854ac20aaca72ce65f0.ctex"]
 
 [params]
 
