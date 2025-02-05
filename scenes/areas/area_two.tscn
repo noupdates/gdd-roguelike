@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c8ghkmenjb8bq" path="res://images/tiles/Brown.png" id="2_jb68o"]
 [ext_resource type="Texture2D" uid="uid://ckmlcej4xqq0h" path="res://images/tiles/Tilemap_Flat.png" id="3_gk72x"]
 [ext_resource type="PackedScene" uid="uid://bglfbs7mqerkx" path="res://scenes/objects/exit_h.tscn" id="4_vlomr"]
-[ext_resource type="Script" path="res://scenes/objects/exit_2_r.gd" id="5_l5bbi"]
+[ext_resource type="PackedScene" uid="uid://d34wmm0asn0l2" path="res://scenes/areas/area_three.tscn" id="5_w53ri"]
 [ext_resource type="PackedScene" uid="uid://bgoy4opnt0lp3" path="res://scenes/characters/main_character.tscn" id="6_l4lhx"]
 [ext_resource type="PackedScene" uid="uid://dsrxjilbjiw37" path="res://scenes/objects/arrow.tscn" id="7_1mch5"]
 [ext_resource type="PackedScene" uid="uid://b01kpiacb7263" path="res://scenes/characters/enemy.tscn" id="8_qgp78"]
@@ -672,8 +672,8 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAI
 tile_set = SubResource("TileSet_valmd")
 
 [node name="Area2D" parent="." instance=ExtResource("4_vlomr")]
-position = Vector2(0, 356)
-script = ExtResource("5_l5bbi")
+position = Vector2(1120, 324)
+target_level = ExtResource("5_w53ri")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_l4lhx")]
 position = Vector2(95, 359)

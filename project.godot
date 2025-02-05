@@ -18,6 +18,7 @@ config/icon="res://images/icon.svg"
 [autoload]
 
 AudioManager="*res://scenes/audio_manager.gd"
+GameManager="*res://scenes/game_manager.gd"
 
 [input]
 
