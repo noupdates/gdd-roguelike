@@ -15,5 +15,6 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body.name == "CharacterBody2D"):
+		get_node("/root/AudioManager").play_yummy_voice()
 		queue_free()
 		game_manager.restore_full_hp()
